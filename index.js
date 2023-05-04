@@ -13,6 +13,14 @@ app.get('/chefs',(req,res)=>{
     res.send(chefs);
 })
 
+app.get('/chefs/:id',(req, res)=>{
+const id =req.params.id;
+console.log(id);
+const selectedchefs=chefs.find(c=>c.id ===id);
+res.send(selectedchefs)
+})
+
+
 app.listen(port, () => {
     console.log(`khabar ghor api is running on port:${port}`)
 })
